@@ -1,0 +1,40 @@
+# Python/cache artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+
+# OS/editor temporary files
+.DS_Store
+Thumbs.db
+~$*
+*.tmp
+*.temp
+*.log
+
+# Raw/internal source data
+data/
+
+# Generated local review/export artifacts
+outputs/
+*.inspect.ndjson
+*_preview.png
+
+# Local scratch/check files
+_*.txt
+_*.json
+
+# Data-derived complaint samples and model datasets.
+# These may contain complaint IDs, merchants, titles, or content summaries.
+stage1_pilot_samples.csv
+stage1_pilot_category_results*.csv
+stage1_category_review_cases_500.csv
+stage1_manual_accuracy_sample_80.csv
+stage1_taxonomy_gap_candidates_500.csv
+stage1_pilot_brand_results*.csv
+stage1_brand_candidates_from_samples.csv
+stage2_training_data.jsonl
+stage2_llm_test_cases.jsonl
+stage2_rule_validation_results.csv
+stage2_ml_baseline_predictions.jsonl
+stage2_rule_disagreement_review_25.json
+

@@ -1,0 +1,168 @@
+{
+  "version": "stage2_rule_assets_v1",
+  "description": "用于阻止中文子串误匹配的排除词、量词、成语和上下文规则。",
+  "negative_phrases": [
+    "手机号的验证码",
+    "绑定的别人手机",
+    "包裹内是耳环",
+    "换绑定手机号",
+    "挂羊头卖狗肉",
+    "绑定别人手机",
+    "一包尿不湿",
+    "几包尿不湿",
+    "绑定手机号",
+    "两包尿不湿",
+    "别人手机",
+    "一笔订单",
+    "天猫超市",
+    "不包邮件",
+    "不包邮",
+    "手机号",
+    "表情包",
+    "包装盒",
+    "帽子处",
+    "包修",
+    "这笔",
+    "包裹",
+    "单笔",
+    "多笔",
+    "天猫",
+    "包月",
+    "包括",
+    "包赔",
+    "三包",
+    "红包",
+    "狗肉",
+    "包退",
+    "那笔",
+    "包装",
+    "包换",
+    "猫腻",
+    "包容",
+    "包庇",
+    "包邮",
+    "每笔"
+  ],
+  "blocked_single_char_terms": [
+    "券",
+    "包",
+    "卡",
+    "床",
+    "狗",
+    "猫",
+    "笔",
+    "药",
+    "酒",
+    "鞋",
+    "鱼"
+  ],
+  "phrase_rules": [
+    {
+      "rule_id": "pattern_apple_digital",
+      "patterns": [
+        "苹果手机",
+        "苹果15",
+        "苹果16",
+        "苹果17",
+        "iphone",
+        "iPhone",
+        "promax",
+        "Pro Max"
+      ],
+      "l1_code": "06",
+      "l1_name": "数码电子",
+      "l2_code": "06-01",
+      "l2_name": "手机通讯",
+      "entity": "手机",
+      "entity_type": "PRODUCT",
+      "confidence": 0.94
+    },
+    {
+      "rule_id": "pattern_apple_fruit",
+      "patterns": [
+        "昭通苹果",
+        "烟台苹果",
+        "十斤苹果",
+        "苹果烂",
+        "苹果尺寸",
+        "生鲜苹果"
+      ],
+      "l1_code": "01",
+      "l1_name": "食品生鲜",
+      "l2_code": "01-04",
+      "l2_name": "生鲜水果",
+      "entity": "苹果",
+      "entity_type": "PRODUCT",
+      "confidence": 0.93
+    },
+    {
+      "rule_id": "pattern_half_day_delivery",
+      "patterns": [
+        "半日达",
+        "晚到必赔",
+        "未按时送达"
+      ],
+      "l1_code": "20",
+      "l1_name": "平台服务与账号服务",
+      "l2_code": "20-04",
+      "l2_name": "物流配送服务",
+      "entity": "半日达配送",
+      "entity_type": "PLATFORM_SERVICE",
+      "confidence": 0.93
+    },
+    {
+      "rule_id": "pattern_delivery",
+      "patterns": [
+        "快递丢失",
+        "物流不更新",
+        "物流延误",
+        "派送超时",
+        "配送超时"
+      ],
+      "l1_code": "20",
+      "l1_name": "平台服务与账号服务",
+      "l2_code": "20-04",
+      "l2_name": "物流配送服务",
+      "entity": "物流配送",
+      "entity_type": "PLATFORM_SERVICE",
+      "confidence": 0.9
+    },
+    {
+      "rule_id": "pattern_food_delivery",
+      "patterns": [
+        "骑手送餐",
+        "外卖送餐",
+        "餐品洒漏",
+        "淘宝闪购骑手"
+      ],
+      "l1_code": "16",
+      "l1_name": "本地生活服务",
+      "l2_code": "16-01",
+      "l2_name": "餐饮外卖",
+      "entity": "外卖配送",
+      "entity_type": "SERVICE",
+      "confidence": 0.9
+    },
+    {
+      "rule_id": "pattern_store_purchase_product_cup",
+      "patterns": [
+        "店铺购买星巴克杯子",
+        "购买星巴克杯子",
+        "杯子漏水",
+        "盖子太紧"
+      ],
+      "l1_code": "07",
+      "l1_name": "家居家装",
+      "l2_code": "07-04",
+      "l2_name": "厨房卫浴用品",
+      "entity": "杯子",
+      "entity_type": "PRODUCT",
+      "confidence": 0.95
+    }
+  ],
+  "notes": [
+    "不要全局禁用真实商品词，例如 包包、书包、背包、购买一个包 仍可识别为箱包。",
+    "排除词优先级高于商品词典命中。",
+    "如果 evidence_text 中的实体不存在于原文，应视为无来源实体，不允许自动输出。"
+  ]
+}
